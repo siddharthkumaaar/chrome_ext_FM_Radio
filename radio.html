@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rdaio API</title>
+    <!-- <script type="text/javascript" src="jsdelivr.js"></script> -->
+</head>
+<body>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@0.14.8/dist/hls.min.js"></script>
+    <audio id="video" controls></audio>
+    <script>
+    if(Hls.isSupported())
+    {
+        var video = document.getElementById('video');
+        var hls = new Hls();
+        hls.loadSource('https://vividhbharati-lh.akamaihd.net/i/vividhbharati_1@507811/master.m3u8?_=1');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED,function()
+        {
+            video.play();
+        });
+    }
+    else if (video.canPlayType('application/vnd.apple.mpegurl'))
+    {
+        video.src = 'https://vividhbharati-lh.akamaihd.net/i/vividhbharati_1@507811/master.m3u8?_=1';
+        video.addEventListener('canplay',function()
+        {
+            video.play();
+        });
+    }
+    </script>
+</body>
+</html>
