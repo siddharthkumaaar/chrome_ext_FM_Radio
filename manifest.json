@@ -1,0 +1,24 @@
+{
+    
+
+    "name":"Online FM radio",
+    "version":"1.0",
+    "manifest_version":2,
+    "content_security_policy": "script-src 'self' 'sha256-pkKbcZOpPmZPm8WwlBjBEdT4tsQHDGi+UEWWsz1dP/8='",
+    
+    "description":"Online FM radio stream telecasted online FM content in browser",
+
+    
+    "browser_action":{
+        "default_title":"FM radio",
+        "default_popup":"popup.html",
+        "default_icon":{
+            "128":"radio.png"
+        }
+    },
+
+    
+    "permissions":["activeTab"]
+
+}
+
